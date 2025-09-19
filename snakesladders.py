@@ -25,24 +25,15 @@ while True:
         if userInput.lower() == "no":
             break
     else:
-        if square == 9:
-            square += 25
-            print(f"You landed on a ladder!")
-        elif square == 40:
-            square += 24
-            print(f"You landed on a ladder!")
-        elif square == 67:
-            square += 19
-            print(f"You landed on a ladder!")
-        elif square == 54:
-            square -= 35
-            print(f"Oops! You landed on a snake!")
-        elif square == 90:
-            square -= 42
-            print(f"Oops! You landed on a snake!")
-        elif square == 99:
-            square -= 22
-            print(f"Oops! You landed on a snake!")
-    print("------------------------------------------------------------------------------------")
+        new_position = square
+        game_dict = {
+            9 : 34,
+            54 : 19,
+            40 : 64,
+            90 : 48,
+            67 : 86, 
+            99 : 77
+        }
+        if new_position in game_dict:
+            square = game_dict[new_position]
     print(f"You are now at square {square}")
-    print("------------------------------------------------------------------------------------")
